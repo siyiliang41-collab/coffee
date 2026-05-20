@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+@theme {
+  --color-coffee-50: #FEF9F2;
+  --color-coffee-100: #F5E6D3;
+  --color-coffee-200: #E8D5B8;
+  --color-coffee-300: #D4844A;
+  --color-coffee-400: #C0743A;
+  --color-coffee-500: #8B5E3C;
+  --color-coffee-600: #6B3A2A;
+  --color-coffee-700: #5A2E1F;
+  --color-coffee-800: #492418;
+  --color-coffee-900: #3C2415;
+  --radius-sketch: 12px 4px 12px 4px;
+  --radius-sketch-sm: 8px 3px 8px 3px;
+  --font-family-sketch: "Comic Sans MS", cursive, sans-serif;
+}
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #FEF9F2;
+    color: #3C2415;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+  input, select, textarea, button {
+    font-size: 16px;
+  }
+}
+
+@layer components {
+  .sketch-card {
+    background: white;
+    border-radius: 12px 4px 12px 4px;
+    border: 2px dashed #D4844A;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    padding: 1rem;
+  }
+  .sketch-btn {
+    border-radius: 8px 3px 8px 3px;
+    font-weight: 500;
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+  .sketch-btn:active {
+    transform: scale(0.95);
+  }
+  .sketch-btn-primary {
+    background: #6B3A2A;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+  }
+  .sketch-btn-secondary {
+    background: #F5E6D3;
+    color: #5A2E1F;
+    padding: 0.5rem 1rem;
+    border: 1px solid #D4844A;
+  }
+  .sketch-input {
+    border-radius: 8px 3px 8px 3px;
+    border: 2px solid #E8D5B8;
+    background: white;
+    padding: 0.75rem 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .sketch-input:focus {
+    border-color: #C0743A;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D4844A;
+  border-radius: 3px;
+}
+
+@keyframes checkOff {
+  from { text-decoration-color: transparent; }
+  to { text-decoration-color: #D4844A; }
+}
+
+.stain-bg {
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(212,132,74,0.04) 0%, transparent 50%),
+    radial-gradient(circle at 85% 70%, rgba(107,58,42,0.03) 0%, transparent 40%),
+    radial-gradient(circle at 40% 10%, rgba(212,132,74,0.03) 0%, transparent 35%);
+}
+
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
